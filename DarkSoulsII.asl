@@ -131,7 +131,7 @@ startup {
 		new {MinPos = v3f(-163, -334, 32),		MaxPos = v3f(-157, -325, 33),	Souls = 0},      	//53, Ruined Fork Road bonfire
 		new {MinPos = v3f(0, 21, 0),			MaxPos = v3f(0, -37, 0),		Souls = 0},      	//54, (impossible condition for autosplitter error prevention)
 		new {MinPos = v3f(234, -457, 38),		MaxPos = v3f(238, -447, 39),	Souls = 0},      	//55, before bridge after Skeleton Lords
-		new {MinPos = v3f(589, -554, 89),		MaxPos = v3f(591, -550, 92),	Souls = 0},      	//56, Mytha elevator
+		new {MinPos = v3f(589, -555, 88),		MaxPos = v3f(591, -553, 92),	Souls = 0},      	//56, Mytha elevator
 		new {MinPos = v3f(648, -736, 184),		MaxPos = v3f(651, -734, 185),	Souls = 0},      	//57, door after Smelter Demon
 		new {MinPos = v3f(547, -185, 7),		MaxPos = v3f(551, -181, 8),		Souls = 0},      	//58, bonfire room after Ruin Sentinels
 		new {MinPos = v3f(-55, 73, -3),			MaxPos = v3f(-51, 78, 1),		Souls = 0}, 	 	//59, big door after Aava
@@ -173,6 +173,8 @@ startup {
 		new {MinPos = v3f(-374, -469, 72),		MaxPos = v3f(-368, -462, 73),	Souls = 0},  	 	//95, King's gate bonfire
 		new {MinPos = v3f(597, -91, -2),		MaxPos = v3f(606, -84, 1),		Souls = 0},  	 	//96, Mcduff bonfire
 		new {MinPos = v3f(-260, -701, -7),		MaxPos = v3f(-256, -699, -4),	Souls = 0},      	//97, Duo fog wall
+		new {MinPos = v3f(-16, -39, -49),		MaxPos = v3f(-9, -35, -47),	Souls = 0},      	//98, Inner Wall bonfire
+		new {MinPos = v3f(-95, -266, -40),		MaxPos = v3f(-86, -262, -37),	Souls = 0},      	//99, DLC3 shrine exit
 	};
 	
 	// Interface this to tuple (to allow nice above notation to be kept)
@@ -211,6 +213,7 @@ startup {
 			{
 				Tsplit("Branch Skip",  	"53S"), 		// (bonfire light)
 				Tsplit("Aldia's door", 	"81S"), 		// (door)
+				Tsplit("Guardian Elevator", "47S"), 		// (elevator)
 				Tsplit("Ashen Mist", 	"45L"), 		// (boneout)
 				Tsplit("Giant Lord", 	"30L"), 		// (boneout)
 				Tsplit("Duo Fogwall", 	"97S"), 		// (Fogwall)
@@ -224,21 +227,21 @@ startup {
 		Tuple.Create("17k_5r", "Any% CP (5 Rotten, 17k)", 
 			new List<Tuple<string,string>>
 			{
-				Tsplit("Pursuer", 			"50N 64S"), // (majula warp)
-				Tsplit("Rotten 1", 			"04N 67L"), // (DLC1 portal)
-				Tsplit("DLC1 Runthrough", 	"51S"), 	// (ascetic boneout)
-				Tsplit("RTSR", 				"52N 53L"), // (warp after RTSR)
-				Tsplit("Rotten 2 + 3", 		"05N 06L"), // (Rotten 3 boneout)
-				Tsplit("Rotten 4", 			"07L"), 	// (boneout)
-				Tsplit("Rotten 5", 			"08L"), 	// (boneout)
-				Tsplit("Dragonriders", 		"24S"), 	// (kill)
-				Tsplit("Mirror Knight", 	"25N 48S"), // (elevator)
-				Tsplit("Demon of Song", 	"26N 49S"), // (door)
-				Tsplit("Velstadt", 			"27N 84L"), // (King's ring boneout)
-				Tsplit("Guardian", 			"28N 47S"), // (elevator)
-				Tsplit("Ashen Mist", 		"45L"), 	// (boneout)
-				Tsplit("Giant Lord", 		"30L"), 	// (boneout)
-				Tsplit("Nashandra", 		"43N 44C"), // (black screen after Nash)
+				Tsplit("Pursuer", 		"50N 64S"), 		// (majula warp)
+				Tsplit("Rotten 1", 		"04N 67L"), 		// (DLC1 portal)
+				Tsplit("DLC 1 runthrough", 	"51N 50S"), 		// (warp out of DLC1)
+				Tsplit("RTSR", 			"52N 53L"),		// (warp after RTSR)
+				Tsplit("Rotten 2 + 3", 		"05N 06L"), 		// (Rotten 3 boneout)
+				Tsplit("Rotten 4", 		"07L"), 		// (boneout)
+				Tsplit("Rotten 5", 		"08L"), 		// (boneout)
+				Tsplit("Dragonriders", 		"24S"), 		// (kill)
+				Tsplit("Mirror Knight", 	"25N 48S"), 		// (elevator)
+				Tsplit("Demon of Song", 	"26N 49S"), 		// (door)
+				Tsplit("Velstadt", 		"27N 84L"),		// (King's ring boneout)
+				Tsplit("Guardian", 		"28N 47S"),		// (elevator)
+				Tsplit("Ashen Mist", 		"45L"), 		// (boneout)
+				Tsplit("Giant Lord", 		"30L"), 		// (boneout)
+				Tsplit("Nashandra", 		"43N 44C"),		// (black screen after Nash)
 			}
 		)
 	);
@@ -275,7 +278,7 @@ startup {
 			{
 				Tsplit("Last Giant", 		"00L"),  	// (boneout)
 				Tsplit("Rotten 1", 			"04N 67L"), // (DLC1 portal)
-				Tsplit("DLC1 Runthrough", 	"51S"), 	// (ascetic boneout)
+				Tsplit("DLC 1 runthrough", 	"51N 50S"), 		// (warp out of DLC1)
 				Tsplit("RTSR", 				"52L"), 	// (RTSR boneout)
 				Tsplit("Rotten 2 + 3", 		"05N 06L"), // (Rotten 3 boneout)
 				Tsplit("Rotten 4", 			"07L"), 	// (boneout)
@@ -312,6 +315,22 @@ startup {
 				Tsplit("Ashen Mist", 		"45L"), 	// (boneout)
 				Tsplit("Giant Lord", 		"30L"), 	// (boneout)
 				Tsplit("Nashandra", 		"43N 44C"), // (black screen after Nash)
+			}
+		)
+	);
+	
+	// Any% CP (Unrestricted)
+	vars.routes.Add(
+		Tuple.Create("any_un", "Any% CP Unrestricted", 
+			new List<Tuple<string,string>>
+			{
+				Tsplit("Branch Skip",  	"53S"), 		// (bonfire light)
+				Tsplit("Aldia's door", 	"81S"), 		// (door)
+				Tsplit("Guardian", 	"47S"), 		// (elevator)
+				Tsplit("Ashen Mist", 	"45L"), 		// (boneout)
+				Tsplit("Giant Lord", 	"30L"), 		// (boneout)
+				Tsplit("Duo Fogwall", 	"97S"), 		// (Fogwall)
+				Tsplit("Nashandra", 	"44C"), 		// (black screen after Nash)
 			}
 		)
 	);
@@ -398,7 +417,62 @@ startup {
 			}
 		)
 	);
-	
+
+	// All Bosses Soul Level 1s: Restricted
+	vars.routes.Add(
+		Tuple.Create("AB(SL1_r)", "All Bosses (Soul Level 1 Restricted)", 
+			new List<Tuple<string,string>>
+			{
+				Tsplit("Last Giant",		"00L"), 		// (boneout)
+				Tsplit("Pursuer", 		"01N 83L"), 		// (nest)
+				Tsplit("Dragonrider", 		"03N 85L"), 		// (warp after Licia)	
+				Tsplit("Rotten 1", 		"04N 67L"), 		// (DLC1 portal)
+				Tsplit("DLC1 Runthrough", 	"60L"), 		// (Dragon Stone bonfire)
+				Tsplit("Skeleton Lords", 	"11N 55S"), 		// (lever)
+				Tsplit("Covetous", 		"12S"),			// (kill)
+				Tsplit("Mytha", 		"13N 56S"), 		// (elevator)
+				Tsplit("Smelter Demon",		"14N 57S"),		// (door)
+				Tsplit("Old Iron King", 	"15N 68L"),		// (DLC2 portal)
+				Tsplit("DLC2 Runthrough", 	"76L"),		 	// (chunks boneout)
+				Tsplit("Dragonslayer", 		"09L"), 		// (boneout)
+				Tsplit("Flexile", 		"10L"), 		// (boneout)
+				Tsplit("Sentinels", 		"16S"),		 	// (kill)
+				Tsplit("Gargoyles", 		"17L"),		 	// (boneout)
+				Tsplit("Sinner", 		"18N 86L"),		// (primal)
+				Tsplit("Najka", 		"19S"), 		// (kill)
+				Tsplit("Authority", 		"20S"), 		// (kill)
+				Tsplit("Congregation", 		"21S"), 		// (kill)
+				Tsplit("Freja", 		"22N 87L"),		// (boneout at primal)
+				Tsplit("Vanguard", 		"23L"), 		// (boneout)
+				Tsplit("Eye of the Priestess", 	"98L"), 		// (Inner Wall bonfire)
+				Tsplit("Aava", 			"38N 59L"),		// (warp after doing some DLC3 stuff pls work)
+				Tsplit("Dlc3 Runthrough", 	"99L"),			// (Dlc3 portal after doing the rest of dlc3 stuff)
+				Tsplit("Dragonriders", 		"24S"), 		// (kill)
+				Tsplit("Mirror Knight", 	"25N 48S"), 		// (elevator)
+				Tsplit("Demon of Song", 	"26N 49S"),		// (door)
+				Tsplit("Velstadt", 		"27N 84L"), 		// (King's ring boneout)
+				Tsplit("Guardian", 		"28N 47S"),		// (elevator)
+				Tsplit("Ancient", 		"29L"),  		// (boneout)
+				Tsplit("Giant Lord", 		"30L"), 		// (ASSUMED Soul of a Giant - not explicit)
+				Tsplit("Gulch Giants", 		"63N 70L"),		// (Grandahl boneout)
+				Tsplit("Vendrick", 		"34L"), 		// (boneout)
+				Tsplit("Fume Knight", 		"31L"),			// (boneout)
+				Tsplit("Blue Smelter", 		"32L"), 		// (boneout)
+				Tsplit("Sir Alonne", 		"33L"), 		// (boneout)
+				Tsplit("Burnt Ivory King", 	"39L"), 		// (boneout)
+				Tsplit("Lud and Zallen", 	"40L"), 		// (boneout)
+				Tsplit("Elana", 		"35S"), 		// (kill)
+				Tsplit("Sinh", 			"36L"), 		// (boneout)
+				Tsplit("Gank Squad", 		"37L"), 		// (boneout)
+				Tsplit("Chariot", 		"41L"), 		// (boneout)
+				Tsplit("Dungeon: Woods", 	"71D"), 		// (boneout after dungeon)
+				Tsplit("Dungeon: Gulch", 	"70D"), 		// (boneout after dungeon)
+				Tsplit("Darklurker", 		"42L"), 		// (boneout)
+				Tsplit("Aldia", 		"43N 44C"),		// (cutscene screen after Aldia)	
+			}
+		)
+	);
+
 	// All Bosses - No DLC, Hexes
 	vars.routes.Add(
 		Tuple.Create("old_bosses", "All Bosses No DLC (Hexes)", 
@@ -753,13 +827,14 @@ startup {
 		Tuple.Create("sotfs_17k_PW", "Any% (Unrestricted, Rapier 17k)", 
 			new List<Tuple<string,string>>
 			{
-				Tsplit("Pursuer 17k", 		"50N 64S"), // (warp)
-				Tsplit("Branch", 			"82L"), 	// (Branch boneout)
+				Tsplit("Pursuer 17k", 		"50N 64S"), 	// (warp)
+				Tsplit("Branch", 		"82L"), 	// (Branch boneout)
 				Tsplit("Aldia's skip", 		"81S"), 	// (Aslatiel door)
-				Tsplit("Guardian Elevator", "47S"), 	// (elevator)
+				Tsplit("Guardian Elevator", 	"47S"), 	// (elevator)
 				Tsplit("Ashen Mist Heart", 	"45L"), 	// (boneout)
 				Tsplit("Giant Lord", 		"30L"), 	// (boneout)
-				Tsplit("Nashandra", 		"43N 44C"), // (black screen after Nash)
+				Tsplit("Duo Fogwall", 		"97S"), 	// (Fogwall)
+				Tsplit("Nashandra", 		"43N 44C"),	// (black screen after Nash)
 			}
 		)
 	);
